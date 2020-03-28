@@ -99,6 +99,7 @@ configureLogging();
 
 $('#master-button').click(async () => {
     $('#form').addClass('d-none');
+    $('#instr').addClass('d-none');
     $('#master').removeClass('d-none');
     $('#log').removeClass('d-none');
 
@@ -121,6 +122,7 @@ $('#stop-master-button').click(async () => {
     stopMaster();
 
     $('#form').removeClass('d-none');
+    $('#instr').removeClass('d-none');
     $('#master').addClass('d-none');
     $('#log').addClass('d-none');
 });
