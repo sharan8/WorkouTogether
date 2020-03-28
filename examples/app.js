@@ -40,20 +40,35 @@ function getRandomClientId() {
 
 function getFormValues() {
     return {
-        region: $('#region').val(),
-        channelName: $('#channelName').val(),
+        // region: $('#region').val(),
+        // channelName: $('#channelName').val(),
+        // clientId: $('#clientId').val() || getRandomClientId(),
+        // sendVideo: $('#sendVideo').is(':checked'),
+        // sendAudio: $('#sendAudio').is(':checked'),
+        // openDataChannel: $('#openDataChannel').is(':checked'),
+        // widescreen: $('#widescreen').is(':checked'),
+        // fullscreen: $('#fullscreen').is(':checked'),
+        // useTrickleICE: $('#useTrickleICE').is(':checked'),
+        // natTraversalDisabled: $('#natTraversalDisabled').is(':checked'),
+        // forceTURN: $('#forceTURN').is(':checked'),
+        // accessKeyId: $('#accessKeyId').val(),
+        // endpoint: $('#endpoint').val() || null,
+        // secretAccessKey: $('#secretAccessKey').val(),
+        // sessionToken: $('#sessionToken').val() || null,
+        region: "us-east-1",
+        channelName: "test",
         clientId: $('#clientId').val() || getRandomClientId(),
-        sendVideo: $('#sendVideo').is(':checked'),
-        sendAudio: $('#sendAudio').is(':checked'),
-        openDataChannel: $('#openDataChannel').is(':checked'),
-        widescreen: $('#widescreen').is(':checked'),
-        fullscreen: $('#fullscreen').is(':checked'),
-        useTrickleICE: $('#useTrickleICE').is(':checked'),
-        natTraversalDisabled: $('#natTraversalDisabled').is(':checked'),
-        forceTURN: $('#forceTURN').is(':checked'),
-        accessKeyId: $('#accessKeyId').val(),
+        sendVideo: true,
+        sendAudio: true,
+        openDataChannel: false,
+        widescreen: true,
+        fullscreen: false,
+        useTrickleICE: true,
+        natTraversalDisabled: false,
+        forceTURN: false,
+        accessKeyId: "ASIA6RT5CFFDPNTW6PFJ",
         endpoint: $('#endpoint').val() || null,
-        secretAccessKey: $('#secretAccessKey').val(),
+        secretAccessKey: "4RU6hS221CbOu1j1kD931g4QHrus/QbYDt8VWrjX",
         sessionToken: $('#sessionToken').val() || null,
     };
 }
@@ -85,6 +100,7 @@ configureLogging();
 $('#master-button').click(async () => {
     $('#form').addClass('d-none');
     $('#master').removeClass('d-none');
+    $('#log').removeClass('d-none');
 
     const localView = $('#master .local-view')[0];
     const remoteView = $('#master .remote-view')[0];
@@ -106,6 +122,7 @@ $('#stop-master-button').click(async () => {
 
     $('#form').removeClass('d-none');
     $('#master').addClass('d-none');
+    $('#log').addClass('d-none');
 });
 
 $('#viewer-button').click(async () => {
